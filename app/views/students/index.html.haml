@@ -1,5 +1,10 @@
 %h1 Student List
 %br
+= form_tag students_path, :method => :get, :class => 'form-search' do
+  .input
+    = select_tag(:support, options_for_select(@supports), :prompt => "Select Program")
+    = submit_tag "Search"
+%br
 .table
   %table{:border => "1"}
     %tr

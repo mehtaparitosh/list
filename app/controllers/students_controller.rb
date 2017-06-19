@@ -3,7 +3,8 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
 
   def index
-    @students = Student.all.order(:grade, :name)
+    @students = Student.search(params[:support]).order(:grade, :name)
+    @supports = Student.uniq.pluck(:support)
     respond_to do |format|
       format.html
       format.xls
