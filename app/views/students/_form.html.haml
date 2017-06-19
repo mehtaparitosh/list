@@ -1,0 +1,18 @@
+= simple_form_for @student do |f|
+  - if @student.errors.any?
+    #errors
+      %p
+        = @student.errors.count
+        Prevented this student from Saving
+      %ul
+        - @student.erors.full_messages.each do |msg|
+          %li= msg
+  .panel-body
+    = f.input :st_id, label: "Student ID", input_html: {class: 'form-control'}
+    = f.input :program, input_html: {class: 'form-control'}
+    = f.input :support, input_html: {class: 'form-control'}
+    = f.input :name, input_html: {class: 'form-control'}
+    = f.input :school, input_html: {class: 'form-control'}
+    = f.input :grade, input_html: {class: 'form-control'}
+
+  = f.button :submit, class: "btn btn-primary"

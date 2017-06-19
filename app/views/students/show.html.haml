@@ -1,0 +1,14 @@
+%h1 Student Details
+%br
+%h3= @student.name
+%h4= "ID: #{@student.st_id}"
+%p= "School: #{@student.school}"
+%p= "Class: #{@student.grade}"
+%br
+%p= "Program: #{@student.program}"
+%p= "Support: #{@student.support}"
+%br
+
+=link_to "Edit", edit_student_path
+=link_to "Delete", @student, method: :delete, confirm: {data: "Are You Sure?"}, class: "data"
+=link_to "Back", root_path

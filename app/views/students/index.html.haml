@@ -1,0 +1,22 @@
+%h1 Student List
+%br
+.table
+  %table{:border => "1"}
+    %tr
+      %th SNo.
+      %th Student ID
+      %th Name
+      %th School
+      %th Class
+    - i=1
+    - @students.each do |student|
+      %tr
+        %td= i
+        %td= link_to student.st_id, student
+        %td= student.name
+        %td= student.school
+        -@class = grade(student.grade)
+        %td= @class
+        - i=i+1
+%br
+= link_to "+ Add Student", new_student_path
