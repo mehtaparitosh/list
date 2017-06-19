@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  st_id: MyString
+  program: MyString
+  support: MyString
+  name: MyString
+  school: MyString
+  class: 1
+
+two:
+  st_id: MyString
+  program: MyString
+  support: MyString
+  name: MyString
+  school: MyString
+  class: 1
