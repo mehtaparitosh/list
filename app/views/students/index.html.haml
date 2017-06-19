@@ -19,4 +19,14 @@
         %td= @class
         - i=i+1
 %br
+%p
+  Download:
+  = link_to "Excel", students_path(format: "xls")
+%p
+  Import Data:
+  = form_tag import_students_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Import"
+
+
 = link_to "+ Add Student", new_student_path

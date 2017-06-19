@@ -4,6 +4,11 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all.order(:grade, :name)
+    respond_to do |format|
+      format.html
+      format.xls
+
+    end
   end
 
   def show
@@ -37,6 +42,12 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     redirect_to root_path, notice: "Successfully Deleted"
+  end
+
+
+  def import
+    Student.import(params[:file])
+    redirect_to root_path, notice: "Students Imported"
   end
 
   private

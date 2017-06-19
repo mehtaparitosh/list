@@ -3,7 +3,8 @@
 %h3= @student.name
 %h4= "ID: #{@student.st_id}"
 %p= "School: #{@student.school}"
-%p= "Class: #{@student.grade}"
+-@class = grade(@student.grade)
+%p= "Class: #{@class}"
 %br
 %p= "Program: #{@student.program}"
 %p= "Support: #{@student.support}"
